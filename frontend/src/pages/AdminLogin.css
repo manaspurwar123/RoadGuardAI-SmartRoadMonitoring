@@ -1,0 +1,154 @@
+.rg-login-page {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #071326, #0d2544, #102e4d);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 100px 20px 40px;
+    font-family: "Poppins", Arial, sans-serif;
+}
+
+.rg-login-card {
+    width: 100%;
+    max-width: 440px;
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 38px;
+    box-shadow: 0 20px 65px rgba(0, 0, 0, 0.3);
+}
+
+.rg-login-logo {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 15px;
+    border-radius: 18px;
+    background: #e9f4ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 36px;
+}
+
+.rg-login-card h1 {
+    text-align: center;
+    font-size: 30px;
+    color: #102a43;
+    margin: 0;
+}
+
+.rg-login-subtitle {
+    text-align: center;
+    color: #64748b;
+    margin-top: 8px;
+    font-size: 14px;
+}
+
+.rg-login-divider {
+    height: 1px;
+    background: #e2e8f0;
+    margin: 26px 0;
+}
+
+.rg-login-card h2 {
+    color: #0f172a;
+    font-size: 23px;
+    margin-bottom: 6px;
+}
+
+.rg-login-description {
+    color: #64748b;
+    font-size: 13px;
+    margin-bottom: 25px;
+}
+
+.rg-login-card form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.rg-login-card label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #334155;
+}
+
+.rg-login-card input {
+    width: 100%;
+    padding: 13px 15px;
+    border: 1px solid #cbd5e1;
+    border-radius: 9px;
+    font-size: 14px;
+    outline: none;
+    box-sizing: border-box;
+    background: white;
+    color: #0f172a;
+}
+
+.rg-login-card input:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.rg-password-field {
+    position: relative;
+}
+
+.rg-password-field input {
+    padding-right: 70px;
+}
+
+.rg-password-toggle {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: #2563eb;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.rg-login-submit {
+    margin-top: 14px;
+    padding: 14px;
+    border: none;
+    border-radius: 9px;
+    background: linear-gradient(90deg, #2563eb, #0ea5e9);
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.rg-login-submit:hover {
+    filter: brightness(1.08);
+}
+
+.rg-login-submit:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.rg-login-error {
+    padding: 12px;
+    background: #fee2e2;
+    color: #b91c1c;
+    border-radius: 8px;
+    font-size: 13px;
+    margin-bottom: 15px;
+}
+
+.rg-login-footer {
+    margin-top: 25px;
+    text-align: center;
+    font-size: 12px;
+    color: #94a3b8;
+}
+
+@media (max-width: 480px) {
+    .rg-login-card {
+        padding: 25px;
+    }
+}
