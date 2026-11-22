@@ -18,8 +18,17 @@ from uuid import uuid4
 
 from PIL import Image, UnidentifiedImageError
 
-import tensorflow as tf
-import numpy as np
+
+import os
+
+ENABLE_AI = os.getenv("ROADGUARD_ENABLE_AI", "false").lower() == "true"
+
+tf = None
+np = None
+
+if ENABLE_AI:
+    import tensorflow as tf
+    import numpy as np
 import io
 
 # ==========================================
@@ -135,19 +144,16 @@ MODEL_PATH = (
     / "pothole_classifier.keras"
 )
 
-try:
-    model = tf.keras.models.load_model(
-        MODEL_PATH
-    )
+model = None
 
-    print("AI model loaded successfully")
-
-except Exception as e:
-    model = None
-
-    print(
-        f"AI model loading failed: {e}"
-    )
+if ENABLE_AI:
+    try:
+        model = tf.keras.models.load_model(MODEL_PATH)
+        print("AI model loaded successfully")
+    except Exception as e:
+        print(f"AI model loading failed: {e}")
+else:
+    print("AI inference disabled for lightweight deployment")
 
 # ==========================================
 # ADMIN AUTHENTICATION MODELS
