@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useNavigate, Navigate } from "react-router-dom";
 import "./AdminLogin.css";
 
-const API_URL = "http://127.0.0.1:8001";
+const API_URL = import.meta.env.VITE_API_URL;
 
 export default function AdminLogin() {
     const navigate = useNavigate();
@@ -68,7 +68,7 @@ export default function AdminLogin() {
     return (
         <div className="rg-login-page">
             <div className="rg-login-card">
-                <div className="rg-login-logo">🛣️</div>
+                <div className="rg-login-logo">ðŸ›£ï¸</div>
 
                 <h1>RoadGuard AI</h1>
                 <p className="rg-login-subtitle">
@@ -136,7 +136,7 @@ export default function AdminLogin() {
                 </form>
 
                 <p className="rg-login-footer">
-                    🔒 Authorized administrators only
+                    ðŸ”’ Authorized administrators only
                 </p>
             </div>
         </div>

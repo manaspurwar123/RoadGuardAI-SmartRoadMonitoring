@@ -76,7 +76,7 @@ function Scanner() {
 
         try {
             const response = await fetch(
-                "http://127.0.0.1:8000/predict",
+                `${import.meta.env.VITE_API_URL}/predict`,
                 {
                     method: "POST",
                     body: formData,
@@ -386,7 +386,7 @@ function Scanner() {
                             <div>
                                 <h2>Recent Predictions</h2>
                                 <p>
-                                    Session history — clears on page refresh
+                                    Session history â€” clears on page refresh
                                 </p>
                             </div>
                         </div>

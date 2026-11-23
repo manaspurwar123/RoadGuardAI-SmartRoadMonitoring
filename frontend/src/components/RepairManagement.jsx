@@ -12,7 +12,7 @@ import {
     Zap,
 } from "lucide-react";
 
-const API_URL = "http://127.0.0.1:8001";
+const API_URL = import.meta.env.VITE_API_URL;
 
 export default function RepairManagement({ reports = [], onRepairUpdated }) {
     const [teams, setTeams] = useState([]);
@@ -483,7 +483,7 @@ export default function RepairManagement({ reports = [], onRepairUpdated }) {
                                     <tr key={report.id}>
                                         <td style={styles.td}>#{report.id}</td>
                                         <td style={{ ...styles.td, fontWeight: 700, color: report.queueLevel === "High" ? "#dc2626" : report.queueLevel === "Medium" ? "#b45309" : "#15803d" }}>{report.queueLevel}</td>
-                                        <td style={styles.td}>{report.hasScore ? report.queueScore : "—"}</td>
+                                        <td style={styles.td}>{report.hasScore ? report.queueScore : "â€”"}</td>
                                         <td style={styles.td}>{report.status || "Open"}</td>
                                         <td style={styles.td}>
                                             <button type="button" style={{ ...styles.button, opacity: !recommendedTeam || saving ? 0.55 : 1 }} disabled={!recommendedTeam || saving} onClick={() => assignRecommended(report)}>
@@ -515,7 +515,7 @@ export default function RepairManagement({ reports = [], onRepairUpdated }) {
                                         <tr key={report.id}>
                                             <td style={styles.td}>#{report.id}</td>
                                             <td style={{ ...styles.td, fontWeight: 700, color: report.queueLevel === "High" ? "#dc2626" : report.queueLevel === "Medium" ? "#b45309" : "#15803d" }}>{report.queueLevel}</td>
-                                            <td style={styles.td}>{report.hasScore ? report.queueScore : "—"}</td>
+                                            <td style={styles.td}>{report.hasScore ? report.queueScore : "â€”"}</td>
                                             <td style={styles.td}>{report.status || "Open"}</td>
                                             <td style={styles.td}>{assignment?.team_name || "Unknown"}</td>
                                             <td style={styles.td}>
@@ -689,7 +689,7 @@ export default function RepairManagement({ reports = [], onRepairUpdated }) {
                                     key={report.id}
                                     value={report.id}
                                 >
-                                    Report #{report.id} — {report.status}
+                                    Report #{report.id} â€” {report.status}
                                 </option>
                             ))}
                         </select>
@@ -830,7 +830,7 @@ export default function RepairManagement({ reports = [], onRepairUpdated }) {
                         }}
                     >
                         <h3>
-                            Repair History — Report #{historyReportId}
+                            Repair History â€” Report #{historyReportId}
                         </h3>
 
                         <button

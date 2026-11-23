@@ -26,7 +26,7 @@ import {
     Image as ImageIcon,
 } from "lucide-react";
 
-const API_URL = "http://127.0.0.1:8000";
+const API_URL = import.meta.env.VITE_API_URL;
 const defaultCenter = [22.7196, 75.8577];
 
 const statusColors = {
@@ -1597,7 +1597,7 @@ function SmartCityMap() {
                         {locationAccuracy !== null &&
                             selectedLocation && (
                                 <small className="city-location-accuracy">
-                                    Estimated accuracy: ±
+                                    Estimated accuracy: Â±
                                     {Math.round(
                                         locationAccuracy
                                     )}{" "}
@@ -1751,7 +1751,7 @@ function SmartCityMap() {
                             />
 
                             <small>
-                                JPG, PNG or WebP — Maximum 10 MB.
+                                JPG, PNG or WebP â€” Maximum 10 MB.
                                 AI analysis runs automatically
                                 after saving the report.
                             </small>

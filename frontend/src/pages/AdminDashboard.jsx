@@ -30,7 +30,7 @@ import {
 } from "lucide-react";
 
 // RoadGuard AI Backend
-const API_URL = "http://127.0.0.1:8001";
+const API_URL = import.meta.env.VITE_API_URL;
 
 const STATUS_COLORS = {
     Open: "#ef4444",
@@ -486,10 +486,10 @@ function AdminDashboard() {
     ];
 
     const repairStatCards = [
-        { title: "Total Repair Teams", value: repairStats?.total_teams ?? "—", icon: MapPin, color: "#2563eb" },
-        { title: "Available Teams", value: repairStats?.available_teams ?? "—", icon: CheckCircle2, color: "#16a34a" },
-        { title: "Assigned Repairs", value: repairStats?.assigned_reports ?? "—", icon: Clock3, color: "#d97706" },
-        { title: "Repair History Events", value: repairStats?.total_history_events ?? "—", icon: BrainCircuit, color: "#7c3aed" },
+        { title: "Total Repair Teams", value: repairStats?.total_teams ?? "â€”", icon: MapPin, color: "#2563eb" },
+        { title: "Available Teams", value: repairStats?.available_teams ?? "â€”", icon: CheckCircle2, color: "#16a34a" },
+        { title: "Assigned Repairs", value: repairStats?.assigned_reports ?? "â€”", icon: Clock3, color: "#d97706" },
+        { title: "Repair History Events", value: repairStats?.total_history_events ?? "â€”", icon: BrainCircuit, color: "#7c3aed" },
     ];
 
     // ===============================
@@ -1037,7 +1037,7 @@ function AdminDashboard() {
                                                 ? `${Number(
                                                     report.ai_confidence
                                                 ).toFixed(2)}%`
-                                                : "—"}
+                                                : "â€”"}
                                         </td>
 
                                         {/* STATUS UPDATE */}
@@ -1174,7 +1174,7 @@ function AdminDashboard() {
 
                         <p>
                             <strong>Priority Score:</strong>{" "}
-                            {selectedReport.priority_score ?? "—"}
+                            {selectedReport.priority_score ?? "â€”"}
                         </p>
 
                         <p>
@@ -1189,7 +1189,7 @@ function AdminDashboard() {
                                 ? `${Number(
                                     selectedReport.ai_confidence
                                 ).toFixed(2)}%`
-                                : "—"}
+                                : "â€”"}
                         </p>
 
                         <p>
